@@ -10,7 +10,9 @@ I am a Data scientist/Machine learning Engineer with a background in Mechatronic
 🤔 Alias: Wolesword, my word is my bond!
 ⚡ Fun fact: I love Anime and cars.
 
+``` python
   def relevant_skills(Wole):
     skills_with_proficiency = {'Python': 'Advance', 'SQL': 'Intermidiate', 'ML_DL': 'Intermidiate', 'HTML & CSS': 'Intermediate', 'JAVA': 'Intermediate'}
     tools = ['TensorFlow', 'numpy', 'pandas', 'sklearn', 'Alteryx', 'matplotlib', 'PowerBI', 'tableau']
   return 
+```
