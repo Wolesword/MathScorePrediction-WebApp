@@ -66,7 +66,7 @@ for _ in range(1000000):
         print(score)
 
 '''
-from_pickle = open("student_performace.pickle", "rb")
+from_pickle = open("student_performance.pickle", "rb")
 regression_model = pickle.load(from_pickle)
 
 results = regression_model.predict(x_test)
