@@ -72,7 +72,8 @@ def train(num_k):
             with open("student_performace.pickle", "wb") as pf:
                 pickle.dump(regression_model, pf)
             print(score)
-        return score
+
+    return score
 
 '''
 
