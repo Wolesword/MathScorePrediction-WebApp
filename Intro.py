@@ -54,28 +54,23 @@ def read_data():
 # data reading
 x_train, y_train, x_test, y_test, x, y = read_data()
 
-@st.cache()
-def train(num_k):
-    best = 0
-    for _ in range(1000000):
-        x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+best = 0
+for _ in range(1000000):
+    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
 
-        regression_model = linear_model.LinearRegression()
-        regression_model.fit(x_train, y_train)
+    regression_model = linear_model.LinearRegression()
+    regression_model.fit(x_train, y_train)
 
-        score = regression_model.score(x_test, y_test)
-        # print(score)
+    score = regression_model.score(x_test, y_test)
+    # print(score)
 
-        if score > best:
-            best = score
+    if score > best:
+        best = score
 
-            with open("student_performace.pickle", "wb") as pf:
-                pickle.dump(regression_model, pf)
-            print(score)
+        with open("student_performace.pickle", "wb") as pf:
+            pickle.dump(regression_model, pf)
+        print(score)
 
-    return score
-
-'''
 
 ## Recommended system
 @st.cache()
@@ -88,7 +83,9 @@ def recommended_system(name, num_players):
 
 # Just to show the actual values
 
-'''for w in range(len(results)):
+'''
+
+for w in range(len(results)):
     print(np.round(results[w]), y_test[w])'''
 
 # Learning how to plot. but would not work with a multiple regression - works
