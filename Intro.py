@@ -57,6 +57,7 @@ def read_data():
 # data reading
 x_train, y_train, x_test, y_test, x, y = read_data()
 
+'''
 best = 0
 for _ in range(1000000):
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
@@ -73,7 +74,7 @@ for _ in range(1000000):
         with open("student_performace.pickle", "wb") as pf:
             pickle.dump(regression_model, pf)
         print(score)
-
+'''
 
 ## Recommended system
 @st.cache()
