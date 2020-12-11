@@ -12,6 +12,7 @@ from scipy import stats
 from statsmodels.api import OLS
 import streamlit as st
 
+
 # https://www.kaggle.com/spscientist/students-performance-in-exams
 
 @st.cache
@@ -52,6 +53,8 @@ def read_data():
     # print(OLS(y_train, x_train).fit().summary())
 
     return x_train, y_train, x_test, y_test, x, y
+
+
 # data reading
 x_train, y_train, x_test, y_test, x, y = read_data()
 
@@ -76,11 +79,11 @@ for _ in range(1000000):
 ## Recommended system
 @st.cache()
 def recommended_system(name, num_players):
-
     from_pickle = open("student_performance.pickle", "rb")
     regression_model = pickle.load(from_pickle)
 
     results = regression_model.predict(x_test)
+
 
 # Just to show the actual values
 
