@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import sklearn
+from sklearn.model_selection import train_test_split
 from sklearn import preprocessing, linear_model
 import pickle
 import seaborn as sns
@@ -47,7 +48,7 @@ def read_data():
     y = np.array(data[["math"]])
     # y = np.array(data[["math", "reading", "writing"]])
 
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
     # print(OLS(y_train, x_train).fit().summary())
 
     return x_train, y_train, x_test, y_test, x, y
