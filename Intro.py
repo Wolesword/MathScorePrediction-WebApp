@@ -72,7 +72,7 @@ def train(num_k):
 
 '''
 
-# Recommended system
+## Recommended system
 @st.cache()
 def recommended_system(name, num_players):
 
