@@ -48,7 +48,11 @@ def read_data():
     # y = np.array(data[["math", "reading", "writing"]])
 
     x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
-    print(OLS(y_train, x_train).fit().summary())
+    # print(OLS(y_train, x_train).fit().summary())
+
+    return x_train, y_train, x_test, y_test, x, y
+# data reading
+x_train, y_train, x_test, y_test, x, y = read_data()
 
 @st.cache()
 def train(num_k):
