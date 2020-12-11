@@ -9,67 +9,77 @@ import matplotlib.pyplot as plot
 import scipy
 from scipy import stats
 from statsmodels.api import OLS
+import streamlit as st
 
 # https://www.kaggle.com/spscientist/students-performance-in-exams
 
-data = pd.read_csv("StudentsPerformance.csv", sep=",")
+@st.cache
+def read_data():
+    data = pd.read_csv("StudentsPerformance.csv", sep=",")
 
-# Interesting info on my data
-# print(data.head(), "\n")
-# print(data.shape, "\n")
-# print(data.dtypes, "\n")
-# print(data.info(), "\n")
-# print(data.race.unique(), "\n")
+    # Interesting info on my data
+    # print(data.head(), "\n")
+    # print(data.shape, "\n")
+    # print(data.dtypes, "\n")
+    # print(data.info(), "\n")
+    # print(data.race.unique(), "\n")
 
-en = preprocessing.LabelEncoder()
-data["gender"] = en.fit_transform(list(data["gender"]))
-data["race"] = en.fit_transform(list(data["race"]))
-data["parent_education"] = en.fit_transform(list(data["parent_education"]))
-data["lunch"] = en.fit_transform(list(data["lunch"]))
-data["test_prep"] = en.fit_transform(list(data["test_prep"]))
+    en = preprocessing.LabelEncoder()
+    data["gender"] = en.fit_transform(list(data["gender"]))
+    data["race"] = en.fit_transform(list(data["race"]))
+    data["parent_education"] = en.fit_transform(list(data["parent_education"]))
+    data["lunch"] = en.fit_transform(list(data["lunch"]))
+    data["test_prep"] = en.fit_transform(list(data["test_prep"]))
 
-# Data frame correlation _Pearson
-'''pd.set_option('display.max_columns', None)
-data_correlation = data[data['gender'] == 1]
-with open("Output.txt", "w") as text:
-    print(data_correlation.corr(), file=text)
-'''
-# Another method for Pearson coefficient
-'''data_correlation = data[data['parent_education'] == 1]
-pearson_coef, p_value = stats.pearsonr(data_correlation.gender, data_correlation.race)
-print("Pearson Coeff is: ", pearson_coef)'''
+    # Data frame correlation _Pearson
+    '''pd.set_option('display.max_columns', None)
+    data_correlation = data[data['gender'] == 1]
+    with open("Output.txt", "w") as text:
+        print(data_correlation.corr(), file=text)
+    '''
+    # Another method for Pearson coefficient
+    '''data_correlation = data[data['parent_education'] == 1]
+    pearson_coef, p_value = stats.pearsonr(data_correlation.gender, data_correlation.race)
+    print("Pearson Coeff is: ", pearson_coef)'''
 
-x = np.array(data[["gender", "race", "parent_education", "lunch", "writing", "reading"]])
-# x = np.array(data[["gender", "race", "parent_education", "lunch", "test_prep"]])
-y = np.array(data[["math"]])
-# y = np.array(data[["math", "reading", "writing"]])
+    x = np.array(data[["gender", "race", "parent_education", "lunch", "writing", "reading"]])
+    # x = np.array(data[["gender", "race", "parent_education", "lunch", "test_prep"]])
+    y = np.array(data[["math"]])
+    # y = np.array(data[["math", "reading", "writing"]])
 
-x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
-print(OLS(y_train, x_train).fit().summary())
-
-'''
-best = 0
-for _ in range(1000000):
     x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+    print(OLS(y_train, x_train).fit().summary())
 
-    regression_model = linear_model.LinearRegression()
-    regression_model.fit(x_train, y_train)
+@st.cache()
+def train(num_k):
+    best = 0
+    for _ in range(1000000):
+        x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
 
-    score = regression_model.score(x_test, y_test)
-    # print(score)
+        regression_model = linear_model.LinearRegression()
+        regression_model.fit(x_train, y_train)
 
-    if score > best:
-        best = score
+        score = regression_model.score(x_test, y_test)
+        # print(score)
 
-        with open("student_performace.pickle", "wb") as pf:
-            pickle.dump(regression_model, pf)
-        print(score)
+        if score > best:
+            best = score
+
+            with open("student_performace.pickle", "wb") as pf:
+                pickle.dump(regression_model, pf)
+            print(score)
+        return score
 
 '''
-from_pickle = open("student_performance.pickle", "rb")
-regression_model = pickle.load(from_pickle)
 
-results = regression_model.predict(x_test)
+# Recommended system
+@st.cache()
+def recommended_system(name, num_players):
+
+    from_pickle = open("student_performance.pickle", "rb")
+    regression_model = pickle.load(from_pickle)
+
+    results = regression_model.predict(x_test)
 
 # Just to show the actual values
 
