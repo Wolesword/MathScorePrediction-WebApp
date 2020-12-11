@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Pythongit.iml" filepath="$PROJECT_DIR$/.idea/Pythongit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../streamlit-example/.idea/streamlit-example.iml" filepath="$PROJECT_DIR$/../streamlit-example/.idea/streamlit-example.iml" />
     </modules>
   </component>
 </project>
