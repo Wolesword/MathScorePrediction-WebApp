@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing, linear_model
 import pickle
@@ -60,7 +59,7 @@ x_train, y_train, x_test, y_test, x, y = read_data()
 
 best = 0
 for _ in range(1000000):
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 
     regression_model = linear_model.LinearRegression()
     regression_model.fit(x_train, y_train)
