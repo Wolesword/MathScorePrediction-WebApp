@@ -5,5 +5,8 @@
     <orderEntry type="jdk" jdkName="Python 3.6 (tensor)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="streamlit-example" />
+    <orderEntry type="module" module-name="TensorEnv" />
+    <orderEntry type="module" module-name="HelloWordl" />
+    <orderEntry type="module" module-name="MergePDF" />
   </component>
 </module>
