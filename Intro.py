@@ -160,11 +160,9 @@ regression_model = pickle.load(from_pickle)
 
 st.text("")
 
-
 def predictReg():
-    prediction = regression_model.predict(X_df)
-    prediction_org = scalerY.inverse_transform(prediction)
-    predict = np.around(prediction_org, 2)
+    prediction = regression_model.predict(df1)
+    predict = np.around(prediction, 2)
     return float(predict)
     results = regression_model.predict(x_test)
 
