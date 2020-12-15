@@ -17,7 +17,7 @@ from statsmodels.api import OLS
 import streamlit as st
 
 # https://www.kaggle.com/spscientist/students-performance-in-exams
-# """Student performance Prediction App"""
+# """Student Maths performance Prediction App"""
 data = pd.read_csv("StudentsPerformance.csv", sep=",")
 
 st.write("""
@@ -26,8 +26,8 @@ st.write("""
 html_temp = """
     <div style = "background - color: #f0f0f5; padding: 5px">
     <h3 style="color:#666666;text-align:left; line-height: 1.5">
-    <p>This Web App will predict student performance 
-    in exams once the following (5) parameters are inputed.<br> 
+    <p>This Web App will predict student mathematics performance 
+    in exams once the following (6) parameters are inputed.<br> 
     This is based on Deep learning 
     algorithms with data from a School in North America.</p></h3>
     </div>
@@ -122,7 +122,7 @@ performanceGot = predictReg()
 
 st.text("")
 if st.button('PREDICT PERFORMANCE'):
-    st.write("**$**", performanceGot, " -*based on Deep Learning Algorithm (80% accuracy)*")
+    st.write("**Math Score**", performanceGot, " -*based on Deep Learning Algorithm (80% accuracy)*")
 
 url = '[SOURCE CODE](https://github.com/wolesword/pythongit/main/Intro.py)'
 
