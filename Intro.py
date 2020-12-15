@@ -106,11 +106,11 @@ regression_model = pickle.load(from_pickle)
 
 st.text("")
 
+
 def predictReg():
-    prediction = regression_model.predict(df1)
+    prediction = regression_model.predict(df)
     predict = np.around(prediction, 2)
     return float(predict)
-    results = regression_model.predict(x_test)
 
 
 performanceGot = predictReg()
