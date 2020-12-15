@@ -19,6 +19,7 @@ import streamlit as st
 
 # https://www.kaggle.com/spscientist/students-performance-in-exams
 # """Student performance Prediction App"""
+data = pd.read_csv("StudentsPerformance.csv", sep=",")
 
 st.write("""
     # Student performance Prediction App
@@ -32,10 +33,16 @@ html_temp = """
     algorithms with data from a School in North America.</p></h3>
     </div>
     """
+st.markdown(html_temp, unsafe_allow_html=True)
+
+st.sidebar.header('User Input Parameters')
+
+if st.checkbox('Show Summary of Dataset'):
+    st.write(data.describe())
 
 @st.cache
 def read_data():
-    data = pd.read_csv("StudentsPerformance.csv", sep=",")
+
 
     # Interesting info on my data
     # print(data.head(), "\n")
