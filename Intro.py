@@ -117,7 +117,7 @@ st.text("")
 if st.button('PREDICT PERFORMANCE'):
     st.write("**Math Score**", performanceGot, " -*based on Deep Learning Algorithm (80% accuracy)*")
 
-url = '[SOURCE CODE](https://github.com/wolesword/pythongit/main/Intro.py)'
+url = '[SOURCE CODE](https://github.com/Wolesword/MathScorePrediction-WebApp)'
 
 st.markdown(url, unsafe_allow_html=True)
 # st.subheader(')
