@@ -14,7 +14,7 @@ The code contains:
 It is still a work in progress and open to suggestions. 
 
 Launch the web app, feel free to interact with the parameters:
-https://share.streamlit.io/wolesword/pythongit/main/Intro.py
+https://share.streamlit.io/wolesword/mathscoreprediction-webapp/main/Intro.py
 
 Cheers.
 W
