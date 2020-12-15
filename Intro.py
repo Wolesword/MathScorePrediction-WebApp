@@ -107,14 +107,14 @@ st.write(df)
 # print(data.dtypes, "\n")
 # print(data.info(), "\n")
 # print(data.race.unique(), "\n")
-
+'''
 en = preprocessing.LabelEncoder()
 data["gender"] = en.fit_transform(list(data["gender"]))
 data["race"] = en.fit_transform(list(data["race"]))
 data["parent_education"] = en.fit_transform(list(data["parent_education"]))
 data["lunch"] = en.fit_transform(list(data["lunch"]))
 data["test_prep"] = en.fit_transform(list(data["test_prep"]))
-
+'''
 # Data frame correlation _Pearson
 '''pd.set_option('display.max_columns', None)
 data_correlation = data[data['gender'] == 1]
@@ -126,6 +126,7 @@ with open("Output.txt", "w") as text:
 pearson_coef, p_value = stats.pearsonr(data_correlation.gender, data_correlation.race)
 print("Pearson Coeff is: ", pearson_coef)'''
 
+'''
 x = np.array(data[["gender", "race", "parent_education", "lunch", "writing", "reading"]])
 # x = np.array(data[["gender", "race", "parent_education", "lunch", "test_prep"]])
 y = np.array(data[["math"]])
@@ -133,6 +134,7 @@ y = np.array(data[["math"]])
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 # print(OLS(y_train, x_train).fit().summary())
+'''
 
 '''
 best = 0
@@ -153,15 +155,33 @@ for _ in range(1000000):
         print(score)
 '''
 
-
 from_pickle = open("student_performance.pickle", "rb")
 regression_model = pickle.load(from_pickle)
 
-results = regression_model.predict(x_test)
+st.text("")
 
 
+def predictReg():
+    prediction = regression_model.predict(X_df)
+    prediction_org = scalerY.inverse_transform(prediction)
+    predict = np.around(prediction_org, 2)
+    return float(predict)
+    results = regression_model.predict(x_test)
+
+
+performanceGot = predictReg()
+
+st.text("")
+if st.button('PREDICT PERFORMANCE'):
+    st.write("**$**", performanceGot, " -*based on Deep Learning Algorithm (80% accuracy)*")
+
+url = '[SOURCE CODE](https://github.com/wolesword/pythongit/main/Intro.py)'
+
+st.markdown(url, unsafe_allow_html=True)
+# st.subheader(')
 # Just to show the actual values
 
+# **************************************************************************************************************
 '''
 
 for w in range(len(results)):
