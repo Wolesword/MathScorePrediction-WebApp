@@ -79,7 +79,13 @@ def inputParameters():
         lunch = 1
     else:
         lunch = 2
-    test_prep = st.sidebar.slider("5. No of floors?", 0, 5, 3)
+    test_prep = st.sidebar.radio("2. What is test preparation?", ('none', 'completed'))
+    if test_prep == 'none':
+        test_prep = 0
+    elif test_prep == 'completed':
+        test_prep = 1
+    else:
+        test_prep = 2
 
     features = {'gender': gender, 'race': race,
                 'parent_education': parent_education, 'lunch': lunch,
