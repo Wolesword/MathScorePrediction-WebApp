@@ -14,7 +14,7 @@ The code contains:
 It is still a work in progress and open to suggestions. 
 
 Launch the web app, feel free to interact with the parameters:
-https://share.streamlit.io/Wolesword/streamlit-example/Intro.py
+https://share.streamlit.io/Wolesword/Pythongit/Intro.py
 
 Cheers.
 W
