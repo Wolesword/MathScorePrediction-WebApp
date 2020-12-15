@@ -39,23 +39,50 @@ st.sidebar.header('Set students Input Parameters')
 if st.checkbox('Show Summary of Dataset'):
     st.write(data.describe())
 
+
 @st.cache
 def inputParameters():
     gender = st.sidebar.radio("1. What is the gender?", ('male', 'female'))
     if gender == 'male':
         gender = 0
     else:
-        gender = 1;
+        gender = 1
     # st.write(""" **You selected** """, gender, """**genders**""")
 
-    race = st.sidebar.slider("2. No of bathrooms?", 0, 15, 5)
-    # st.write(""" **You selected** """, race, """**races**""")
+    race = st.sidebar.radio("2. What is the race?", ('group A', 'group B', 'group C', 'group D', 'group E'))
+    if race == 'group A':
+        race = 0
+    elif race == 'group B':
+        race = 1
+    elif race == 'group c':
+        race = 2
+    elif race == 'group D':
+        race = 3
+    else:
+        race = 4
 
-    parent_education = st.sidebar.slider("3. Square footage of the house?", 500, 15000, 2000)
-    # st.write(""" **You chose** """, parent_education,"""**parent education**""")
+    parent_education = st.sidebar.radio("2. What is the parents education?", (
+        'high school', 'some college', 'bachelors degree', 'associates degree', 'masters degree'))
+    if parent_education == 'high school':
+        parent_education = 0
+    elif parent_education == 'some college':
+        parent_education = 1
+    elif parent_education == 'bachelors degree':
+        parent_education = 2
+    elif parent_education == 'associates degree':
+        parent_education = 3
+    elif parent_education == 'masters degree':
+        parent_education = 4
+    else:
+        parent_education = 5
 
-    lunch = st.sidebar.slider("4. Square footage of the lot?", 500, 170000, 1200)
-    # st.write(""" **You wrote** """, sqft_lot,"""**Square fts**""")
+    lunch = st.sidebar.radio("2. What is the parents education?", ('free/reduced', 'standard'))
+    if lunch == 'free/reduced':
+        lunch = 0
+    elif lunch == 'standard':
+        lunch = 1
+    else:
+        lunch = 2
 
     test_prep = st.sidebar.slider("5. No of floors?", 0, 5, 3)
     # st.write(""" **You selected** """, floors,"""**floors**""")
@@ -78,6 +105,7 @@ def inputParameters():
 
     feat = pd.DataFrame(features, index=[0])
     return feat
+
 
 df = inputParameters()
 df1 = np.array(df)
@@ -142,6 +170,7 @@ for _ in range(1000000):
             pickle.dump(regression_model, pf)
         print(score)
 '''
+
 
 ## Recommended system
 @st.cache()
