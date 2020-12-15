@@ -16,7 +16,7 @@ from scipy import stats
 from statsmodels.api import OLS
 import streamlit as st
 
-# https://www.kaggle.com/spscientist/students-performance-in-exams
+#
 # """Student Maths performance Prediction App"""
 data = pd.read_csv("StudentsPerformance.csv", sep=",")
 
@@ -28,8 +28,8 @@ html_temp = """
     <h3 style="color:#666666;text-align:left; line-height: 1.5">
     <p>This Web App will predict student mathematics performance 
     in exams once the following (6) parameters are inputed.<br> 
-    This is based on Deep learning 
-    algorithms with data from a School in North America.</p></h3>
+    This is based on Deep learning algorithms with data from a School in North America.</p></h3>
+    https://www.kaggle.com/spscientist/students-performance-in-exams
     </div>
     """
 st.markdown(html_temp, unsafe_allow_html=True)
