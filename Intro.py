@@ -79,17 +79,22 @@ def inputParameters():
         lunch = 1
     else:
         lunch = 2
-    test_prep = st.sidebar.radio('2. What is test preparation?', ('none', 'completed'))
-    if test_prep == 'none':
-        test_prep = 0
-    elif test_prep == 'completed':
-        test_prep = 1
+    writing = st.sidebar.radio('2. What is test writing preparation?', ('none', 'completed'))
+    if writing == 'none':
+        writing = 0
+    elif writing == 'completed':
+        writing = 1
     else:
-        test_prep = 2
-
+        writing = 2
+    reading = st.sidebar.radio('2. What is test reading preparation?', ('none', 'completed'))
+    if reading == 'none':
+        reading = 0
+    elif reading == 'completed':
+        reading = 1
+    else:
+        reading = 2
     features = {'gender': gender, 'race': race,
-                'parent_education': parent_education, 'lunch': lunch,
-                'test_prep': test_prep}
+                'parent_education': parent_education, 'lunch': lunch, 'writing': writing, 'reading': reading}
 
     feat = pd.DataFrame(features, index=[0])
     return feat
