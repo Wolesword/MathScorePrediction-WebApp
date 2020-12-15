@@ -40,7 +40,7 @@ if st.checkbox('Show Summary of Dataset'):
     st.write(data.describe())
 
 
-@st.cache
+# @st.cache
 def inputParameters():
     gender = st.sidebar.radio('1. What is the gender?', ('male', 'female'))
     if gender == 'male':
