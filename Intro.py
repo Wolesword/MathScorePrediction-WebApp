@@ -43,10 +43,12 @@ if st.checkbox('Show Summary of Dataset'):
 # @st.cache
 def inputParameters():
     gender = st.sidebar.radio('1. What is the gender?', ('male', 'female'))
-    if gender == 'male':
+    if gender == 'female':
         gender = 0
-    else:
+    elif gender == 'male':
         gender = 1
+    else:
+        gender = 2
     race = st.sidebar.radio('2. What is the race?', ('group A', 'group B', 'group C', 'group D', 'group E'))
     if race == 'group A':
         race = 0
@@ -61,17 +63,19 @@ def inputParameters():
     parent_education = st.sidebar.radio('2. What is the parents education?', (
         'high school', 'some college', 'bachelors degree', 'associates degree', 'masters degree'))
     if parent_education == 'high school':
-        parent_education = 0
-    elif parent_education == 'some college':
-        parent_education = 1
-    elif parent_education == 'bachelors degree':
         parent_education = 2
-    elif parent_education == 'associates degree':
-        parent_education = 3
-    elif parent_education == 'masters degree':
-        parent_education = 4
-    else:
+    elif parent_education == 'some high school':
         parent_education = 5
+    elif parent_education == 'some college':
+        parent_education = 4
+    elif parent_education == 'bachelors degree':
+        parent_education = 1
+    elif parent_education == 'associates degree':
+        parent_education = 0
+    elif parent_education == 'masters degree':
+        parent_education = 3
+    else:
+        parent_education = 6
     lunch = st.sidebar.radio('2. What is the parents education?', ('free/reduced', 'standard'))
     if lunch == 'free/reduced':
         lunch = 0
@@ -79,20 +83,9 @@ def inputParameters():
         lunch = 1
     else:
         lunch = 2
-    writing = st.sidebar.radio('2. What is test writing preparation?', ('none', 'completed'))
-    if writing == 'none':
-        writing = 0
-    elif writing == 'completed':
-        writing = 1
-    else:
-        writing = 2
-    reading = st.sidebar.radio('2. What is test reading preparation?', ('none', 'completed'))
-    if reading == 'none':
-        reading = 0
-    elif reading == 'completed':
-        reading = 1
-    else:
-        reading = 2
+    writing = st.sidebar.slider('2. What is test writing preparation?', 0, 100, 1)
+    reading = st.sidebar.slider('2. What is test reading preparation?', 0, 100, 1)
+
     features = {'gender': gender, 'race': race,
                 'parent_education': parent_education, 'lunch': lunch, 'writing': writing, 'reading': reading}
 
