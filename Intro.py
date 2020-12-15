@@ -128,12 +128,6 @@ y = np.array(data[["math"]])
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 # print(OLS(y_train, x_train).fit().summary())
 
-# return x_train, y_train, x_test, y_test, x, y
-
-
-# data reading
-x_train, y_train, x_test, y_test, x, y = read_data()
-
 '''
 best = 0
 for _ in range(1000000):
@@ -154,13 +148,10 @@ for _ in range(1000000):
 '''
 
 
-## Recommended system
-@st.cache()
-def recommended_system(name, num_players):
-    from_pickle = open("student_performance.pickle", "rb")
-    regression_model = pickle.load(from_pickle)
+from_pickle = open("student_performance.pickle", "rb")
+regression_model = pickle.load(from_pickle)
 
-    results = regression_model.predict(x_test)
+results = regression_model.predict(x_test)
 
 
 # Just to show the actual values
