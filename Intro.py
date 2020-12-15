@@ -83,8 +83,8 @@ def inputParameters():
         lunch = 1
     else:
         lunch = 2
-    writing = st.sidebar.slider('2. What is test writing preparation?', 0, 100, 1)
-    reading = st.sidebar.slider('2. What is test reading preparation?', 0, 100, 1)
+    writing = st.sidebar.slider('2. What is test writing score?', 0, 100, 1)
+    reading = st.sidebar.slider('2. What is test reading score?', 0, 100, 1)
 
     features = {'gender': gender, 'race': race,
                 'parent_education': parent_education, 'lunch': lunch, 'writing': writing, 'reading': reading}
