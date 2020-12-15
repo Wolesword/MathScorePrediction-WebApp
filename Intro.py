@@ -17,8 +17,12 @@ from scipy import stats
 from statsmodels.api import OLS
 import streamlit as st
 
-
 # https://www.kaggle.com/spscientist/students-performance-in-exams
+# """Student performance Prediction App"""
+
+st.write("""
+    # Student performance Prediction App
+    """)
 
 @st.cache
 def read_data():
