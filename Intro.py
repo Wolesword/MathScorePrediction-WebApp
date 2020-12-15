@@ -76,7 +76,7 @@ def inputParameters():
         parent_education = 3
     else:
         parent_education = 6
-    lunch = st.sidebar.radio('2. What is the parents education?', ('free/reduced', 'standard'))
+    lunch = st.sidebar.radio('2. Did the student have lunch?', ('free/reduced', 'standard'))
     if lunch == 'free/reduced':
         lunch = 0
     elif lunch == 'standard':
