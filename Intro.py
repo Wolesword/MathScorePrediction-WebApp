@@ -21,7 +21,7 @@ import streamlit as st
 data = pd.read_csv("StudentsPerformance.csv", sep=",")
 
 st.write("""
-    # Student performance Prediction App
+    # Student Math score performance Prediction WebApp
     """)
 html_temp = """
     <div style = "background - color: #f0f0f5; padding: 5px">
