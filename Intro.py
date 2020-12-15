@@ -42,12 +42,12 @@ if st.checkbox('Show Summary of Dataset'):
 
 @st.cache
 def inputParameters():
-    gender = st.sidebar.radio("1. What is the gender?", ('male', 'female'))
+    gender = st.sidebar.radio('1. What is the gender?', ('male', 'female'))
     if gender == 'male':
         gender = 0
     else:
         gender = 1
-    race = st.sidebar.radio("2. What is the race?", ('group A', 'group B', 'group C', 'group D', 'group E'))
+    race = st.sidebar.radio('2. What is the race?', ('group A', 'group B', 'group C', 'group D', 'group E'))
     if race == 'group A':
         race = 0
     elif race == 'group B':
@@ -58,7 +58,7 @@ def inputParameters():
         race = 3
     else:
         race = 4
-    parent_education = st.sidebar.radio("2. What is the parents education?", (
+    parent_education = st.sidebar.radio('2. What is the parents education?', (
         'high school', 'some college', 'bachelors degree', 'associates degree', 'masters degree'))
     if parent_education == 'high school':
         parent_education = 0
@@ -72,14 +72,14 @@ def inputParameters():
         parent_education = 4
     else:
         parent_education = 5
-    lunch = st.sidebar.radio("2. What is the parents education?", ('free/reduced', 'standard'))
+    lunch = st.sidebar.radio('2. What is the parents education?', ('free/reduced', 'standard'))
     if lunch == 'free/reduced':
         lunch = 0
     elif lunch == 'standard':
         lunch = 1
     else:
         lunch = 2
-    test_prep = st.sidebar.radio("2. What is test preparation?", ('none', 'completed'))
+    test_prep = st.sidebar.radio('2. What is test preparation?', ('none', 'completed'))
     if test_prep == 'none':
         test_prep = 0
     elif test_prep == 'completed':
