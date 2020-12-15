@@ -120,7 +120,4 @@ if st.button('PREDICT PERFORMANCE'):
 url = '[SOURCE CODE](https://github.com/Wolesword/MathScorePrediction-WebApp)'
 
 st.markdown(url, unsafe_allow_html=True)
-# st.subheader(')
-# Just to show the actual values
-
 # **************************************************************************************************************
