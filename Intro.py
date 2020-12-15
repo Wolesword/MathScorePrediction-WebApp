@@ -6,8 +6,8 @@ Created on Monday Dec 14 09:51:13 2020
 
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn import preprocessing, linear_model
+#from sklearn.model_selection import train_test_split
+#from sklearn import preprocessing, linear_model
 import pickle
 import seaborn as sns
 from matplotlib import style
