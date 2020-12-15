@@ -77,7 +77,6 @@ def inputParameters():
                 'test_prep': test_prep}
 
     feat = pd.DataFrame(features, index=[0])
-
     return feat
 
 df = inputParameters()
@@ -119,7 +118,7 @@ y = np.array(data[["math"]])
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 # print(OLS(y_train, x_train).fit().summary())
 
-return x_train, y_train, x_test, y_test, x, y
+# return x_train, y_train, x_test, y_test, x, y
 
 
 # data reading
