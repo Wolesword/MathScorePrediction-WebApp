@@ -29,7 +29,7 @@ html_temp = """
     <p>This Web App will predict student mathematics performance 
     in exams once the following (6) parameters are inputed.<br> 
     This is based on Deep learning algorithms with data from a School in North America.</p></h3>
-    https://www.kaggle.com/spscientist/students-performance-in-exams
+    Dataset: <br> https://www.kaggle.com/spscientist/students-performance-in-exams<br> 
     </div>
     """
 st.markdown(html_temp, unsafe_allow_html=True)
