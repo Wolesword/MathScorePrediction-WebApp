@@ -47,8 +47,6 @@ def inputParameters():
         gender = 0
     else:
         gender = 1
-    # st.write(""" **You selected** """, gender, """**genders**""")
-
     race = st.sidebar.radio("2. What is the race?", ('group A', 'group B', 'group C', 'group D', 'group E'))
     if race == 'group A':
         race = 0
@@ -60,7 +58,6 @@ def inputParameters():
         race = 3
     else:
         race = 4
-
     parent_education = st.sidebar.radio("2. What is the parents education?", (
         'high school', 'some college', 'bachelors degree', 'associates degree', 'masters degree'))
     if parent_education == 'high school':
@@ -75,7 +72,6 @@ def inputParameters():
         parent_education = 4
     else:
         parent_education = 5
-
     lunch = st.sidebar.radio("2. What is the parents education?", ('free/reduced', 'standard'))
     if lunch == 'free/reduced':
         lunch = 0
@@ -83,21 +79,7 @@ def inputParameters():
         lunch = 1
     else:
         lunch = 2
-
     test_prep = st.sidebar.slider("5. No of floors?", 0, 5, 3)
-    # st.write(""" **You selected** """, floors,"""**floors**""")
-
-    yr_renovated = st.sidebar.radio('12. Year renovated?', ('Known', 'Unknown'))
-    if yr_renovated == 'Unknown':
-        yr_renovated = 0
-    else:
-        yr_renovated = st.sidebar.slider("Year Renovated?", 1900, 2019, 2010)
-
-    waterfront = st.sidebar.radio('18. House has Waterfront View?', ('Yes', 'No'))
-    if waterfront == 'Yes':
-        waterfront = 1
-    else:
-        waterfront = 0
 
     features = {'gender': gender, 'race': race,
                 'parent_education': parent_education, 'lunch': lunch,
