@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../HelloWordl/.idea/HelloWordl.iml" filepath="$PROJECT_DIR$/../HelloWordl/.idea/HelloWordl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MathScorePrediction-WebApp.iml" filepath="$PROJECT_DIR$/.idea/MathScorePrediction-WebApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/../MergePDF/.idea/MergePDF.iml" filepath="$PROJECT_DIR$/../MergePDF/.idea/MergePDF.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Pythongit.iml" filepath="$PROJECT_DIR$/.idea/Pythongit.iml" />
       <module fileurl="file://$PROJECT_DIR$/../TensorEnv/.idea/TensorEnv.iml" filepath="$PROJECT_DIR$/../TensorEnv/.idea/TensorEnv.iml" />
       <module fileurl="file://$PROJECT_DIR$/../streamlit-example/.idea/streamlit-example.iml" filepath="$PROJECT_DIR$/../streamlit-example/.idea/streamlit-example.iml" />
     </modules>

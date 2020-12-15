@@ -5,15 +5,15 @@ Created on Monday Dec 14 09:51:13 2020
 """
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn import preprocessing, linear_model
+# from sklearn.model_selection import train_test_split
+# from sklearn import preprocessing, linear_model
 import pickle
-import seaborn as sns
-from matplotlib import style
-import matplotlib.pyplot as plot
-import scipy
-from scipy import stats
-from statsmodels.api import OLS
+# import seaborn as sns
+# from matplotlib import style
+# import matplotlib.pyplot as plot
+# import scipy
+# from scipy import stats
+# from statsmodels.api import OLS
 import streamlit as st
 
 #
@@ -41,7 +41,7 @@ if st.checkbox('Show Summary of Dataset'):
 
 
 # @st.cache
-def inputParameters():
+def inputparameters():
     gender = st.sidebar.radio('1. What is the gender?', ('male', 'female'))
     if gender == 'female':
         gender = 0
@@ -93,7 +93,7 @@ def inputParameters():
     return feat
 
 
-df = inputParameters()
+df = inputparameters()
 df1 = np.array(df)
 
 st.subheader('User Input parameters')
@@ -105,13 +105,13 @@ regression_model = pickle.load(from_pickle)
 st.text("")
 
 
-def predictReg():
+def predictreg():
     prediction = regression_model.predict(df)
     predict = np.around(prediction, 2)
     return float(predict)
 
 
-performanceGot = predictReg()
+performanceGot = predictreg()
 
 st.text("")
 if st.button('PREDICT PERFORMANCE'):
@@ -120,4 +120,3 @@ if st.button('PREDICT PERFORMANCE'):
 url = '[SOURCE CODE](https://github.com/Wolesword/MathScorePrediction-WebApp)'
 
 st.markdown(url, unsafe_allow_html=True)
-# **************************************************************************************************************
