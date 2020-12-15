@@ -29,7 +29,7 @@ html_temp = """
     <p>This Web App will predict student mathematics performance 
     in exams once the following (6) parameters are inputed.<br> 
     This is based on Deep learning algorithms with data from a School in North America.<br> <br> 
-    Dataset: <br> https://www.kaggle.com/spscientist/students-performance-in-exams</p></h3>
+    Dataset: <br> url = '[SOURCE DATA](https://www.kaggle.com/spscientist/students-performance-in-exams)'</p></h3>
     </div>
     """
 st.markdown(html_temp, unsafe_allow_html=True)
@@ -99,7 +99,7 @@ df1 = np.array(df)
 st.subheader('User Input parameters')
 st.write(df)
 
-from_pickle = open("student_performance.pickle", "rb")
+from_pickle = open("student_performance2.pickle", "rb")
 regression_model = pickle.load(from_pickle)
 
 st.text("")
@@ -115,7 +115,7 @@ performanceGot = predictReg()
 
 st.text("")
 if st.button('PREDICT PERFORMANCE'):
-    st.write("**Math Score**", performanceGot, " -*based on Deep Learning Algorithm (80% accuracy)*")
+    st.write("**Math Score**", performanceGot, " -*based on Deep Learning Algorithm (94.26% accuracy)*")
 
 url = '[SOURCE CODE](https://github.com/Wolesword/MathScorePrediction-WebApp)'
 
