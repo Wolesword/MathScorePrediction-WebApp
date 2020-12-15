@@ -105,7 +105,7 @@ from_pickle = open("student_performance.pickle", "rb")
 regression_model = pickle.load(from_pickle)
 
 st.text("")
-
+st.write(df1)
 
 def predictReg():
     prediction = regression_model.predict(df)
