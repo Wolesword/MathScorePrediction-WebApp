@@ -35,7 +35,7 @@ html_temp = """
     """
 st.markdown(html_temp, unsafe_allow_html=True)
 
-st.sidebar.header('User Input Parameters')
+st.sidebar.header('Set students Input Parameters')
 
 if st.checkbox('Show Summary of Dataset'):
     st.write(data.describe())
