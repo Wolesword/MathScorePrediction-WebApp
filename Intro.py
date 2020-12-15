@@ -3,7 +3,6 @@
 Created on Monday Dec 14 09:51:13 2020
 @author: WoleOlufayo
 """
-
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
