@@ -32,6 +32,7 @@ html_temp = """
     algorithms with data from a School in North America.</p></h3>
     </div>
     """
+
 @st.cache
 def read_data():
     data = pd.read_csv("StudentsPerformance.csv", sep=",")
